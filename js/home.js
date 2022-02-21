@@ -87,4 +87,3 @@ import '../scss/pages/home.scss'
 //     console.log('get all fail', error)
 //   }
 // })()
-console.log(1)

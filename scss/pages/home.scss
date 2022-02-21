@@ -1,10 +1,9 @@
 /* Core variables and mixins*/
-
+@import '../core/variables.scss';
 @import '../core/reset';
 @import '../core/mixins';
 @import '../core/elements';
 @import '../core/libs';
-
 @import '../core/loading';
 
 /* Navigation, header, footer*/
@@ -13,6 +12,18 @@
 @import '../core/nav';
 @import '../core/footer';
 
-h1 {
-  display: none;
+.homepage {
+  .banner {
+    position: relative;
+    height: auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .banner__img {
+    width: 100%;
+    height: 100%;
+  }
 }
