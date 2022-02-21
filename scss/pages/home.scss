@@ -1,0 +1,18 @@
+/* Core variables and mixins*/
+
+@import '../core/reset';
+@import '../core/mixins';
+@import '../core/elements';
+@import '../core/libs';
+
+@import '../core/loading';
+
+/* Navigation, header, footer*/
+
+@import '../core/header';
+@import '../core/nav';
+@import '../core/footer';
+
+h1 {
+  display: none;
+}
