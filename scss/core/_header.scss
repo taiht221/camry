@@ -4,10 +4,13 @@ header {
   top: 0;
   width: 100%;
   z-index: 11;
+  .navbar {
+    padding: 0;
+  }
   .navbar-light .navbar-nav .nav-link {
-    color: $white-cl;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    color: $white-cl;
   }
   .navbar-expand-lg .navbar-nav {
     align-items: center;

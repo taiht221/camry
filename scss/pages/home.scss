@@ -3,8 +3,8 @@
 @import '../core/reset';
 @import '../core/mixins';
 @import '../core/elements';
-@import '../core/libs';
-@import '../core/loading';
+@import '../core/form';
+@import '../core/font';
 
 /* Navigation, header, footer*/
 
@@ -14,16 +14,247 @@
 
 .homepage {
   .banner {
+    background: black;
     position: relative;
     height: auto;
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .form-register {
+      position: absolute;
+      right: 9%;
+      top: 10%;
+      @include desktop {
+        top: 13%;
+        right: 0;
+        .form-content {
+          h3 {
+            font-weight: 500;
+          }
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+      @include tablet {
+        position: relative;
+        right: 0;
+        top: 0;
+        width: 60%;
+        max-width: unset;
+        margin: 0 auto;
+      }
+      @include mobile {
+        width: 80%;
+      }
+    }
+  }
+  .banner__img {
+    width: 100%;
+    height: 100%;
+  }
+  .about {
+    background: black;
+    position: relative;
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about-content {
+      position: absolute;
+      right: 16%;
+      top: 0;
+      height: 80%;
+      > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      a {
+        position: relative;
+        display: inline-block;
+        height: 44px;
+        line-height: 38px;
+        color: black;
+        background-color: white;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        @include desktop {
+          height: 20px;
+          line-height: 12px;
+          font-weight: 700;
+          font-size: 12px;
+        }
+      }
+    }
+    @include mobile {
+      margin-top: 10px;
+      .row-btn {
+        display: none;
+      }
+    }
+  }
+  .car-shape {
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
-  .banner__img {
-    width: 100%;
-    height: 100%;
+  .engine {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .safe {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .hybrid {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .register {
+    .col {
+      padding-left: 0px;
+      padding-right: 0px;
+      @include mobile {
+        flex-direction: column;
+      }
+    }
+    @include mobile {
+      .row {
+        flex-direction: column;
+      }
+    }
+
+    .pick-color {
+      height: 100%;
+      background-color: #fff;
+
+      .pick-button {
+        margin-top: 5%;
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 80%;
+          li {
+            margin-left: 5%;
+            opacity: 0.5;
+            cursor: pointer;
+            &.active {
+              border-radius: 10%;
+              opacity: 1;
+            }
+            &:hover {
+              border: 3px solid #3680bf;
+            }
+          }
+        }
+      }
+      @include desktop {
+        > img {
+          width: 70%;
+          height: 60%;
+          object-fit: contain;
+        }
+        .pick-button {
+          margin-top: 0;
+          ul {
+            width: 70%;
+            li {
+              margin-left: 5px;
+              img {
+                width: 40px;
+                height: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .form-register {
+      background-color: #cccccc;
+      .form-content {
+        color: $black-cl;
+      }
+      ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $black-cl;
+        opacity: 1; /* Firefox */
+      }
+
+      :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $black-cl;
+      }
+
+      ::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: $black-cl;
+      }
+      .form-content h3 {
+        word-spacing: 3px;
+        letter-spacing: 3px;
+        font-weight: 700;
+      }
+      @include tablet {
+        max-width: unset;
+        width: 60%;
+        margin: 10px auto 0;
+      }
+      @include mobile {
+        margin-top: 10px;
+        max-width: unset;
+        width: 80%;
+      }
+    }
+    .form-register .form-wrap .form-content .form-group .form-control {
+      color: $black-cl;
+    }
+    .row-btn {
+      padding: 6px 0 10px;
+      display: flex;
+      align-items: center;
+      .loader {
+        border: 4px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 4px solid rgba(0, 0, 0, 1);
+        width: 40px;
+        height: 40px;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+        padding: 0;
+        background-color: transparent;
+        display: none;
+        margin: 0 auto;
+      }
+      .button-web {
+        margin: 0 auto;
+        background: none;
+        border: none;
+        span {
+          background: none;
+          color: white;
+          letter-spacing: normal;
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
   }
 }

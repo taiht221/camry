@@ -87,3 +87,22 @@ import '../scss/pages/home.scss'
 //     console.log('get all fail', error)
 //   }
 // })()
+function initPickColor() {
+  const buttonList = document.querySelector('#buttonList')
+  let imgUrl = document.querySelector('.pick-color').firstElementChild
+  const buttonListElement = buttonList.querySelectorAll('.buttonListElement')
+
+  buttonListElement.forEach((e, i) => {
+    e.addEventListener('click', () => {
+      //   console.log(e.classList)
+
+      buttonListElement.forEach((event, i) => {
+        event.classList.remove('active')
+      })
+      e.classList.add('active')
+      imgUrl.setAttribute('src', e.dataset.url)
+    })
+  })
+}
+
+initPickColor()
