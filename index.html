@@ -66,99 +66,101 @@
                             <p class="text-center">các mẫu xe Camry mới của Toyota</p>
                         </div>
 
-                        <div class="form-group dropdown-list mb-2">
-                            <select name="car_location" id="event1409_area" onchange="getAgency(this)"
-                                class="form-control no_js">
-                                <!-- load Api -->
-                                <option value="">Tỉnh / Thành phố *</option>
-                                <option value="Bac Giang">Bắc Giang</option>
-                                <option value="Bac Ninh">Bắc Ninh</option>
-                                <option value="Ha Noi">Hà Nội</option>
-                                <option value="Hai Duong">Hải Dương</option>
-                                <option value="Hai Phong">Hải Phòng</option>
-                                <option value="Hoa Binh">Hòa Bình</option>
-                                <option value="Lao Cai">Lào Cai</option>
-                                <option value="Nam Dinh">Nam Dịnh</option>
-                                <option value="Phu Tho">Phú Thọ</option>
-                                <option value="Quang Ninh">Quảng Ninh</option>
-                                <option value="Son La">Sơn La</option>
-                                <option value="Thai Nguyen">Thái Nguyên</option>
-                                <option value="Thai Binh">Thái Bình</option>
-                                <option value="Hung Yen">Hưng Yên</option>
-                                <option value="Vinh Phuc">Vĩnh Phúc</option>
-                                <option value="Hai Phong">Hải Phòng</option>
-                                <option value="Binh Dinh">Bình Định</option>
-                                <option value="Binh Thuan">Bình Thuận</option>
-                                <option value="Da Nang">Đà Nẵng</option>
-                                <option value="Dak Lak">Dak Lak</option>
-                                <option value="Gia Lai">Gia Lai</option>
-                                <option value="Ha Tinh">Hà Tĩnh</option>
-                                <option value="Nghe An">Nghệ An</option>
-                                <option value="Khanh Hoa">Khánh Hòa</option>
-                                <option value="Phu Yen">Phú Yên</option>
-                                <option value="HCM">Hồ Chí Minh</option>
-                                <option value="Thanh Hoa">Thanh Hóa</option>
-                                <option value="Can Tho">Cần Thơ</option>
-                                <option value="BRVT">Bà Rịa Vũng Tàu</option>
-                                <option value="Binh Duong">Bình Dương</option>
-                                <option value="Binh Phuoc">Bình Phước</option>
-                                <option value="Dong Nai">Đòng Nai</option>
-                                <option value="Long An">Long An</option>
-                                <option value="Tay Ninh">Tây Ninh</option>
-                                <option value="Tien Giang">Tiền Giang</option>
-                                <option value="Vinh Long">Vĩnh Long</option>
-                                <option value="Ben Tre">Bến Tre</option>
-                            </select>
-                        </div>
-                        <div class="form-group dropdown-list mb-2">
-                            <select name="Title" id="event1409_dealer" class="form-control no_js">
-                                <option value="">Đại lý liên hệ *</option>
-                            </select>
-                            <p class="showErr"></p>
-                        </div>
-                        <div class="form-group mb-2">
-                            <input type="text" name="event1409_fullname" id="event1409_fullname" maxlength="40"
-                                required="required" class="form-control" placeholder="Họ và Tên *">
-                            <p class="showErr"></p>
-                        </div>
-                        <div class="form-group mb-2">
-                            <input type="text" name="event1409_phone" id="event1409_phone"
-                                onkeyup="this.value=this.value.replace(/[^\d^\+]/,'')" maxlength="13"
-                                required="required" class="form-control" placeholder="Số Điện thoại *">
-                            <p class="showErr"></p>
-                        </div>
-                        <div class="form-group mb-2">
-                            <input type="text" name="Email" id="event1409_email" class="form-control"
-                                placeholder="Email">
-                            <p class="showErr"></p>
-                        </div>
-                        <div class="form-group dropdown-list mb-1">
-                            <select name="event1409_planning" id="event1409_planning" class="form-control no_js">
-                                <option value="" selected="selected">Dự định mua xe</option>
-                                <option value="Trong vòng 10 ngày">Trong vòng 10 ngày</option>
-                                <option value="Trong vòng 10-20 ngày">
-                                    Trong vòng 10-20 ngày
-                                </option>
-                                <option value="Trong vòng 20-30 ngày">
-                                    Trong vòng 20-30 ngày
-                                </option>
-                                <option value="Trong vòng 1-2 tháng">
-                                    Trong vòng 1-2 tháng
-                                </option>
-                                <option value="Trong vòng 2-3 tháng">
-                                    Trong vòng 2-3 tháng
-                                </option>
-                                <option value="Nhiều hơn 3 tháng">Nhiều hơn 3 tháng</option>
-                                <option value="Chưa xác định">Chưa xác định</option>
-                            </select>
-                        </div>
-                        <div class="form-group row-btn ">
-                            <button type="button" id="event1409_submit" onclick="submitform();" name="event1409_submit"
-                                class="button-web">
-                                <span>Đăng ký ngay</span>
-                            </button>
-                            <button class="loader"></button>
-                        </div>
+                        <form id="form-content" novalidate>
+                            <div class="form-group dropdown-list mb-2">
+                                <select name="car_location" id="event1409_area" onchange="getAgency(this)"
+                                    class="form-control no_js">
+                                    <!-- load Api -->
+                                    <option value="">Tỉnh / Thành phố *</option>
+                                    <option value="Bac Giang">Bắc Giang</option>
+                                    <option value="Bac Ninh">Bắc Ninh</option>
+                                    <option value="Ha Noi">Hà Nội</option>
+                                    <option value="Hai Duong">Hải Dương</option>
+                                    <option value="Hai Phong">Hải Phòng</option>
+                                    <option value="Hoa Binh">Hòa Bình</option>
+                                    <option value="Lao Cai">Lào Cai</option>
+                                    <option value="Nam Dinh">Nam Dịnh</option>
+                                    <option value="Phu Tho">Phú Thọ</option>
+                                    <option value="Quang Ninh">Quảng Ninh</option>
+                                    <option value="Son La">Sơn La</option>
+                                    <option value="Thai Nguyen">Thái Nguyên</option>
+                                    <option value="Thai Binh">Thái Bình</option>
+                                    <option value="Hung Yen">Hưng Yên</option>
+                                    <option value="Vinh Phuc">Vĩnh Phúc</option>
+                                    <option value="Hai Phong">Hải Phòng</option>
+                                    <option value="Binh Dinh">Bình Định</option>
+                                    <option value="Binh Thuan">Bình Thuận</option>
+                                    <option value="Da Nang">Đà Nẵng</option>
+                                    <option value="Dak Lak">Dak Lak</option>
+                                    <option value="Gia Lai">Gia Lai</option>
+                                    <option value="Ha Tinh">Hà Tĩnh</option>
+                                    <option value="Nghe An">Nghệ An</option>
+                                    <option value="Khanh Hoa">Khánh Hòa</option>
+                                    <option value="Phu Yen">Phú Yên</option>
+                                    <option value="HCM">Hồ Chí Minh</option>
+                                    <option value="Thanh Hoa">Thanh Hóa</option>
+                                    <option value="Can Tho">Cần Thơ</option>
+                                    <option value="BRVT">Bà Rịa Vũng Tàu</option>
+                                    <option value="Binh Duong">Bình Dương</option>
+                                    <option value="Binh Phuoc">Bình Phước</option>
+                                    <option value="Dong Nai">Đòng Nai</option>
+                                    <option value="Long An">Long An</option>
+                                    <option value="Tay Ninh">Tây Ninh</option>
+                                    <option value="Tien Giang">Tiền Giang</option>
+                                    <option value="Vinh Long">Vĩnh Long</option>
+                                    <option value="Ben Tre">Bến Tre</option>
+                                </select>
+                                <p class="showErr"></p>
+                            </div>
+                            <div class="form-group dropdown-list mb-2">
+                                <select name="Title" id="event1409_dealer" class="form-control no_js">
+                                    <option value="">Đại lý liên hệ *</option>
+                                </select>
+                                <p class="showErr"></p>
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="text" name="fullname" id="event1409_fullname" maxlength="40"
+                                    class="form-control" placeholder="Họ và Tên *">
+                                <p class="showErr"></p>
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="text" name="phone" id="event1409_phone"
+                                    onkeyup="this.value=this.value.replace(/[^\d^\+]/,'')" maxlength="13"
+                                    class="form-control" placeholder="Số Điện thoại *">
+                                <p class="showErr"></p>
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="text" name="Email" id="event1409_email" class="form-control"
+                                    placeholder="Email">
+                                <p class="showErr"></p>
+                            </div>
+                            <div class="form-group dropdown-list mb-1">
+                                <select name="planning" id="event1409_planning" class="form-control no_js">
+                                    <option value="" selected="selected">Dự định mua xe</option>
+                                    <option value="Trong vòng 10 ngày">Trong vòng 10 ngày</option>
+                                    <option value="Trong vòng 10-20 ngày">
+                                        Trong vòng 10-20 ngày
+                                    </option>
+                                    <option value="Trong vòng 20-30 ngày">
+                                        Trong vòng 20-30 ngày
+                                    </option>
+                                    <option value="Trong vòng 1-2 tháng">
+                                        Trong vòng 1-2 tháng
+                                    </option>
+                                    <option value="Trong vòng 2-3 tháng">
+                                        Trong vòng 2-3 tháng
+                                    </option>
+                                    <option value="Nhiều hơn 3 tháng">Nhiều hơn 3 tháng</option>
+                                    <option value="Chưa xác định">Chưa xác định</option>
+                                </select>
+                                <p class="showErr"></p>
+                            </div>
+                            <div class="row-btn">
+                                <button type="submit" id="event1409_submit" name="submit" class="button-web">
+                                    <span>Đăng ký ngay</span>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                     <div class="note">
                         Bằng cách nhấp vào Đăng ký ngay, Khách hàng đồng ý gửi thông tin của mình tới Toyota Việt Nam.
