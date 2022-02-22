@@ -9,7 +9,7 @@
 // } from './utils'
 // import { initLoader } from './utils/load'
 import '../scss/pages/home.scss'
-
+import LazyLoad from 'vanilla-lazyload'
 // async function handleFilterChange(filterName, filterValue) {
 //   try {
 //     //update query params
@@ -106,3 +106,8 @@ function initPickColor() {
 }
 
 initPickColor()
+
+var lazyLoadInstance = new LazyLoad({
+  // Your custom settings go here
+})
+lazyLoadInstance.update()

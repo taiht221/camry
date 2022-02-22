@@ -63,6 +63,9 @@
       height: 100%;
       object-fit: cover;
     }
+    .about-mobile {
+      display: none;
+    }
     .about-content {
       position: absolute;
       right: 16%;
@@ -96,6 +99,12 @@
       .row-btn,
       .about-content {
         display: none;
+      }
+      .about-desk {
+        display: none;
+      }
+      .about-mobile {
+        display: block;
       }
     }
   }
