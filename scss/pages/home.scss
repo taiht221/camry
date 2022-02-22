@@ -93,7 +93,8 @@
     }
     @include mobile {
       margin-top: 10px;
-      .row-btn {
+      .row-btn,
+      .about-content {
         display: none;
       }
     }
