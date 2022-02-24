@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 const axiosClient = axios.create({
-  baseURL: 'https://js-post-api.herokuapp.com/api',
+  baseURL: 'https://client-pages.adnetwork.vn/',
   headers: {
-    'Content-Type': 'application/json',
+    'Content-Type': 'multipart/form-data',
   },
 })
 
@@ -27,13 +27,25 @@ axiosClient.interceptors.request.use(
 // Add a response interceptor
 axiosClient.interceptors.response.use(
   function (response) {
+    console.log(response)
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
-    return response?.data
+
+    if (response.data.status === 'ok') {
+      const snackbar = document.getElementById('snackbar')
+      snackbar.style.background = 'green'
+      snackbar.textContent = 'Chúc mừng bạn đã đăng kí thành công'
+      snackbar.classList.add('show')
+      setTimeout(() => (window.location.pathname = '/thank-page.html'), 2000)
+      localStorage.setItem('sucess', 'sucess')
+    }
+
+    if (response.data === 'phone') throw new Error('Số điện thoại đã được đăng kí')
+    return response.data
   },
   function (error) {
     // Do something with response error
-    if (!error.response) throw new Error('Some thing went gone. Please try again!')
+    // if (!error.response) throw new Error('Some thing went gone. Please try again!')
 
     // Unauthorize redirect to login
     if (error.response.status === 401) window.location.assign('/login.html')

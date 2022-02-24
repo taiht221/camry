@@ -10,7 +10,8 @@
 // import { initLoader } from './utils/load'
 import '../scss/pages/home.scss'
 import LazyLoad from 'vanilla-lazyload'
-import { registerForm } from './utils'
+import { initGrand, registerForm } from './utils'
+import postApi from './api/postApi'
 // async function handleFilterChange(filterName, filterValue) {
 //   try {
 //     //update query params
@@ -106,39 +107,72 @@ function initPickColor() {
   })
 }
 
-initPickColor()
-
 var lazyLoadInstance = new LazyLoad({
   // Your custom settings go here
 })
 lazyLoadInstance.update()
 
 async function handlePostFormSubmit(formValues) {
-  //   const payload = removeUnuseFields(formValues)
-  //   const formData = jsonFormData(payload)
-  //   try {
-  //     // check  add or edit - call APi - show toast successs -redirect to detail page
-  //     // if formValues have id key ==> Edit Page
-  //     const apiValues = formValues.id
-  //       ? await postApi.updateFormData(formData)
-  //       : await postApi.addFormData(formData)
-  //     toast.success('Your Post Has Been Save !')
-  //     setTimeout(() => window.location.assign(`/post-details.html?id=${apiValues.id}`), 2000)
-  //   } catch (error) {
-  //     toast.error(`Error: ${error.message}`)
-  //   }
+  const { car_location, title, fullname, phone, email } = formValues
+  const form = document.getElementById('form-content')
+  const checked = form.querySelector(`[name="planning"]`).checked
+  const newValues = {
+    phone,
+    name: fullname,
+    email,
+    city: car_location,
+    agency: title,
+    plan: checked,
+    source: window.location.href,
+  }
+  const newData = new FormData()
+  for (const [key, value] of Object.entries(newValues)) {
+    newData.append(key, value)
+  }
+
+  console.log(newData)
+  try {
+    // check  add or edit - call APi - show toast successs -redirect to detail page
+    // if formValues have id key ==> Edit Page
+    await postApi.add(newData)
+    // setTimeout(() => window.location.assign(`/post-details.html?id=${apiValues.id}`), 2000)
+  } catch (error) {
+    const snackbar = document.getElementById('snackbar')
+    snackbar.style.background = 'red'
+    snackbar.textContent = error.message
+    snackbar.classList.add('show')
+    setTimeout(() => {
+      snackbar.classList.remove('show')
+    }, 3000)
+    // toast.error(`Error: ${error.message}`)
+  }
 }
 
-let defaultValues = {
-  car_location: '',
-  Title: '',
-  fullname: '',
-  phone: '',
-  Email: '',
-  planning: '',
-}
-registerForm({
-  formId: 'form-content',
-  defaultValues,
-  onSubmit: (formValues) => handlePostFormSubmit(formValues),
-})
+;(async () => {
+  const form = document.getElementById('form-content')
+  const form2 = document.getElementById('form-content2')
+  try {
+    let defaultValues = {
+      car_location: '',
+      title: '',
+      fullname: '',
+      phone: '',
+      email: '',
+    }
+    registerForm({
+      formId: 'form-content',
+      defaultValues,
+      onSubmit: (formValues) => handlePostFormSubmit(formValues),
+    })
+    registerForm({
+      formId: 'form-content2',
+      defaultValues,
+      onSubmit: (formValues) => handlePostFormSubmit(formValues),
+    })
+    initPickColor()
+    initGrand(form)
+    initGrand(form2)
+  } catch (error) {
+    console.log('get all fail', error)
+  }
+})()

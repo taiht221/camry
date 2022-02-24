@@ -1,14 +1,10 @@
 /* Core variables and mixins*/
-
-@import 'imports/core/reset';
-@import 'imports/core/variables';
-@import 'imports/core/mixins';
-@import 'imports/core/elements';
-@import 'imports/core/form';
-@import '../core/font';
-
+@import '../core/mixins';
+@import '../core/variables.scss';
+@import '../core/elements';
 /* Navigation, header, footer*/
 
-@import 'imports/core/header';
-@import 'imports/core/nav';
-@import 'imports/core/footer';
+body {
+  background-color: unset;
+  margin: 0;
+}

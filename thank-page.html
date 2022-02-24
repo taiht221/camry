@@ -8,8 +8,30 @@
     <title>Document</title>
 </head>
 
-<body>
+<style>
+    .thankpage {
+        background-color: black;
+        opacity: 0.5;
+        height: 100vh;
+        position: relative;
+        z-index: -1;
+    }
 
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 11;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<body>
+    <div class="thankpage">
+    </div>
+    <img src="images/thank-you.jpg" alt="thankspage">
+    <div id="snackbar">Chuyển trang bắt đầu sau <span id="seconds">5</span> giây</div>
+    <script src="./js/thank-page.js" type="module"></script>
 </body>
 
 </html>

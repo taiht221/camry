@@ -40,3 +40,10 @@
 //   //   @include mobile-xxs {
 //   //   }
 // }
+footer {
+  height: 200px;
+  background-color: black;
+  @include tablet {
+    height: 100px;
+  }
+}

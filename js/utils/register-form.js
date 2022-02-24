@@ -16,27 +16,23 @@ function getFormValues(form) {
 }
 
 function createYupSchema() {
-  const phoneRegExp =
-    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+  const phoneRegExp = /^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/
   return yup.object().shape({
-    car_location: yup.string().required('Please enter title'),
-    Title: yup
+    car_location: yup.string().required('Vui lòng chọn đại lí!'),
+    title: yup.string(),
+    fullname: yup.string().required('Vui lòng nhập tên!').max(40),
+    phone: yup
       .string()
-      .required('Please enter author')
-      .test(
-        'at-least-two-word',
-        'Please enter at least two word',
-        (value) => value.split(' ').filter((x) => !!x && x.length >= 3).length >= 2
-      ),
-    fullname: yup.string().required('Please enter title'),
-    phone: yup.string().matches(phoneRegExp, 'Phone number is not valid'),
-    Email: yup.string().email('Must be a valid email').max(255),
-    planning: yup.string(),
+      .required('Vui lòng nhập số điện thoại!')
+      .matches(phoneRegExp, 'Vui lòng nhập đúng định đạng số điện thoại!')
+      .max(10),
+    email: yup.string().email('Vui lòng nhập đúng định đạng email').max(255),
   })
 }
 
 function setFieldError(form, name, error) {
   const element = form.querySelector(`[name="${name}"]`)
+
   if (element) {
     element.setCustomValidity(error)
     setTextContent(element.parentElement, '.showErr', error)
@@ -47,7 +43,7 @@ async function validateForm(form, formValues) {
   // get errors --- set errors --- add was-validated class bs
   try {
     // reset previous errors
-    ;['car_location', 'Title', 'fullname', 'phone', 'Email', 'planning'].forEach((name) =>
+    ;['car_location', 'title', 'fullname', 'phone', 'email'].forEach((name) =>
       setFieldError(form, name, '')
     )
 
@@ -59,7 +55,6 @@ async function validateForm(form, formValues) {
     if (error.name === 'ValidationError' && Array.isArray(error.inner)) {
       for (const validationError of error.inner) {
         const name = validationError.path
-        console.log(errorLog[name])
         if (errorLog[name]) continue
 
         setFieldError(form, name, validationError.message)
@@ -74,11 +69,28 @@ async function validateForm(form, formValues) {
   return isValid
 }
 
+async function validateFormField(form, formValues, name) {
+  try {
+    //clear previous values
+    setFieldError(form, name, '')
+
+    const schema = createYupSchema()
+    await schema.validateAt(name, formValues)
+  } catch (error) {
+    setFieldError(form, name, error.message)
+  }
+
+  //show validation errror
+  const field = form.querySelector(`[name='${name}']`)
+  if (field && !field.checkValidity()) {
+    field.parentElement.classList.add('was-validated')
+  }
+}
+
 function showLoading(form) {
   const button = form.querySelector(`[name="submit"]`)
   if (button) {
     button.disabled = true
-    button.innerHTML = '<i class="fas fa-save mr-1"></i>  Saving ...'
   }
 }
 
@@ -86,8 +98,19 @@ function hideLoading(form) {
   const button = form.querySelector(`[name="submit"]`)
   if (button) {
     button.disabled = false
-    button.innerHTML = '<i class="fas fa-save mr-1"></i>  Save'
   }
+}
+
+function initValidationOnChange(form) {
+  ;['car_location', 'fullname', 'phone'].forEach((name) => {
+    const field = form.querySelector(`[name="${name}"]`)
+    if (field) {
+      field.addEventListener('input', (event) => {
+        const newValue = event.target.value
+        validateFormField(form, { [name]: newValue }, name)
+      })
+    }
+  })
 }
 
 export function registerForm({ formId, defaultValues, onSubmit }) {
@@ -101,24 +124,23 @@ export function registerForm({ formId, defaultValues, onSubmit }) {
   //   initRandomImage(form)
   //   initRadioImageSource(form)
   //   initUpLoadImage(form)
-  //   initValidationOnChange(form)
+  initValidationOnChange(form)
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault()
 
     if (submitting) return
 
-    // showLoading(form)
+    showLoading(form)
     submitting = true
 
     const formValues = getFormValues(form)
 
     const isValid = await validateForm(form, formValues)
-    console.log(isValid)
     // Promise is truthy !Promise alway false --> so alway pass return
     if (isValid) await onSubmit?.(formValues)
 
-    // hideLoading(form)
+    hideLoading(form)
     submitting = false
   })
 }
