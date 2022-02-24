@@ -9,7 +9,6 @@
 // } from './utils'
 // import { initLoader } from './utils/load'
 import '../scss/pages/home.scss'
-import LazyLoad from 'vanilla-lazyload'
 import { initGrand, registerForm } from './utils'
 import postApi from './api/postApi'
 // async function handleFilterChange(filterName, filterValue) {
