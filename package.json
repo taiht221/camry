@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "axios": "^0.25.0",
-    "vanilla-lazyload": "^17.6.1",
     "yup": "^0.32.11"
   }
 }

@@ -106,12 +106,6 @@ function initPickColor() {
     })
   })
 }
-
-var lazyLoadInstance = new LazyLoad({
-  // Your custom settings go here
-})
-lazyLoadInstance.update()
-
 async function handlePostFormSubmit(formValues) {
   const { car_location, title, fullname, phone, email } = formValues
   const form = document.getElementById('form-content')
