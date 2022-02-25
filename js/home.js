@@ -88,23 +88,57 @@ import postApi from './api/postApi'
 //     console.log('get all fail', error)
 //   }
 // })()
+
+function rmActive(buttonList) {
+  const buttonListElement = buttonList.querySelectorAll('.buttonListElement')
+  buttonListElement.forEach((buttonListElement) => {
+    buttonListElement.classList.remove('active')
+  })
+}
+
 function initPickColor() {
   const buttonList = document.querySelectorAll('.buttonList')
   let imgUrl = document.querySelector('.pick-color').firstElementChild
-  const buttonListElement = buttonList.querySelectorAll('.buttonListElement')
+  // const buttonListElement = buttonList.querySelectorAll('.buttonListElement')
 
-  buttonListElement.forEach((e, i) => {
-    e.addEventListener('click', () => {
-      //   console.log(e.classList)
+  buttonList.forEach((e) => {
+    const buttonListElement = e.querySelectorAll('.buttonListElement')
+    console.log(buttonListElement)
 
-      buttonListElement.forEach((event, i) => {
-        event.classList.remove('active')
+    buttonListElement.forEach((buttonListElement) => {
+      buttonListElement.addEventListener('click', () => {
+        rmActive(buttonListElement.parentNode)
+        buttonListElement.classList.add('active')
+        buttonListElement.parentNode.parentNode.parentNode.firstElementChild.setAttribute(
+          'src',
+          buttonListElement.dataset.img
+        )
       })
-      e.classList.add('active')
-      imgUrl.setAttribute('src', e.dataset.img)
     })
   })
+  var triggerTabList = [].slice.call(document.querySelectorAll('#myTab button'))
+  triggerTabList.forEach(function (triggerEl) {
+    var tabTrigger = new bootstrap.Tab(triggerEl)
+
+    triggerEl.addEventListener('click', function (event) {
+      event.preventDefault()
+      tabTrigger.show()
+    })
+  })
+  // buttonListElement.forEach((e, i) => {
+  //   console.log(e)
+  //   e.addEventListener('click', () => {
+  //     //   console.log(e.classList)
+
+  //     buttonListElement.forEach((event, i) => {
+  //       event.classList.remove('active')
+  //     })
+  //     e.classList.add('active')
+  //     imgUrl.setAttribute('src', e.dataset.img)
+  //   })
+  // })
 }
+
 async function handlePostFormSubmit(formValues) {
   console.log(formValues)
   const { car_location, title, fullname, phone, email, planning } = formValues
