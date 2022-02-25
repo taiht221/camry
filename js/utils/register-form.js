@@ -3,11 +3,6 @@ import * as yup from 'yup'
 function getFormValues(form) {
   const values = {}
 
-  //   ;['title', 'author', 'description', 'imageUrl'].forEach((name) => {
-  //     const field = form.querySelector(`[name='${name}']`)
-  //     if (field) values[name] = field.value
-  //   })
-
   const data = new FormData(form)
   for (const [key, value] of data) {
     values[key] = value

@@ -1,95 +1,9 @@
-// import postApi from './api/postApi'
-// import {
-//   initModal,
-//   initPagination,
-//   initSearch,
-//   renderPagination,
-//   renderPostList,
-//   toast,
-// } from './utils'
-// import { initLoader } from './utils/load'
 import '../scss/pages/home.scss'
-import { initGrand, registerForm } from './utils'
+import { initGrand, jsonFormData, registerForm } from './utils'
 import postApi from './api/postApi'
-// async function handleFilterChange(filterName, filterValue) {
-//   try {
-//     //update query params
-//     const url = new URL(window.location)
-//     if (filterName) url.searchParams.set(filterName, filterValue)
 
-//     // reset page if page = 3 and item in page 1
-//     if (filterName === 'title_like') url.searchParams.set('_page', 1)
-//     history.pushState({}, '', url)
-
-//     //fetch Api
-
-//     //re-render Post List
-//     const { data, pagination } = await postApi.getAll(url.searchParams)
-
-//     renderPagination('Pagination', pagination)
-//     renderPostList('postList', data)
-//   } catch (error) {
-//     console.log('failed to fetch post list', error)
-//   }
-// }
-
-// function registerPostDeleteEvent() {
-//   document.addEventListener('post-delete', async (e) => {
-//     //get post-id form custom event ->getID-> delete by ID
-//     try {
-//       initModal({
-//         modalId: 'Modal',
-//         postElement: e,
-//         onChange: async () => {
-//           const post = e.detail
-
-//           await postApi.delete(post.id)
-//           await handleFilterChange()
-//           toast.success('Your post is delete')
-//         },
-//       })
-//     } catch (error) {
-//       toast.error(error.message)
-//     }
-//   })
-// }
-
-// ;(async () => {
-//   try {
-//     initLoader()
-
-//     const url = new URL(window.location)
-
-//     // set default params for url
-//     if (!url.searchParams.get('_page')) url.searchParams.set('_page', 1)
-//     if (!url.searchParams.get('_limit')) url.searchParams.set('_limit', 6)
-
-//     history.pushState({}, '', url)
-//     const params = url.searchParams
-
-//     registerPostDeleteEvent()
-
-//     initPagination({
-//       elementId: 'Pagination',
-//       defaultParams: params,
-//       onChange: (page) => handleFilterChange('_page', page),
-//     })
-
-//     initSearch({
-//       elementId: 'searchInput',
-//       defaultParams: params,
-//       onChange: (value) => handleFilterChange('title_like', value),
-//     })
-
-//     const { data, pagination } = await postApi.getAll(params)
-//     renderPostList('postList', data)
-//     renderPagination('Pagination', pagination)
-//   } catch (error) {
-//     console.log('get all fail', error)
-//   }
-// })()
-
-function rmActive(buttonList) {
+function removeActive(buttonList) {
+  if (!buttonList) return
   const buttonListElement = buttonList.querySelectorAll('.buttonListElement')
   buttonListElement.forEach((buttonListElement) => {
     buttonListElement.classList.remove('active')
@@ -98,15 +12,19 @@ function rmActive(buttonList) {
 
 function initPickColor() {
   const buttonList = document.querySelectorAll('.buttonList')
-  buttonList.forEach((e) => {
-    const buttonListElement = e.querySelectorAll('.buttonListElement')
-    console.log(buttonListElement)
+
+  if (!buttonList) return
+
+  buttonList.forEach((buttonList) => {
+    const buttonListElement = buttonList.querySelectorAll('.buttonListElement')
 
     buttonListElement.forEach((buttonListElement) => {
       buttonListElement.addEventListener('click', () => {
-        rmActive(buttonListElement.parentNode)
+        removeActive(buttonListElement.parentNode)
+
         buttonListElement.classList.add('active')
-        buttonListElement.parentNode.parentNode.parentNode.firstElementChild.setAttribute(
+
+        buttonList.parentElement.parentElement.firstElementChild.setAttribute(
           'src',
           buttonListElement.dataset.src
         )
@@ -116,7 +34,6 @@ function initPickColor() {
 }
 
 async function handlePostFormSubmit(formValues) {
-  console.log(formValues)
   const { car_location, title, fullname, phone, email, planning } = formValues
   const newValues = {
     phone,
@@ -127,15 +44,12 @@ async function handlePostFormSubmit(formValues) {
     plan: planning,
     source: window.location.href,
   }
-  const newData = new FormData()
-  for (const [key, value] of Object.entries(newValues)) {
-    newData.append(key, value)
-  }
+  const formData = jsonFormData(newValues)
 
   try {
     // check  add or edit - call APi - show toast successs -redirect to detail page
     // if formValues have id key ==> Edit Page
-    await postApi.add(newData)
+    await postApi.add(formData)
     // setTimeout(() => window.location.assign(`/post-details.html?id=${apiValues.id}`), 2000)
   } catch (error) {
     const snackbar = document.getElementById('snackbar')
@@ -152,6 +66,8 @@ async function handlePostFormSubmit(formValues) {
 ;(async () => {
   const form = document.getElementById('form-content')
   const form2 = document.getElementById('form-content2')
+  if (!form || !form2) return
+
   try {
     let defaultValues = {
       car_location: '',

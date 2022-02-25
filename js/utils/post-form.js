@@ -1,7 +1,5 @@
-import { randomNumber, setBackgroundImg, setTextContent } from '.'
-import { setFieldValues } from './common'
+import { randomNumber, setBackgroundImg, setFieldValues, setTextContent } from '.'
 import * as yup from 'yup'
-
 const ImageSource = {
   PICSUM: 'picsum',
   UPLOAD: 'upload',

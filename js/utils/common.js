@@ -38,3 +38,13 @@ export function randomNumber(n) {
   const random = Math.random() * n
   return Math.round(random)
 }
+
+export function jsonFormData(jsonObject) {
+  const formData = new FormData()
+
+  for (const key in jsonObject) {
+    formData.set(key, jsonObject[key])
+  }
+
+  return formData
+}

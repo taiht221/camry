@@ -1,4 +1,5 @@
 export function initGrand(form) {
+  if (!form) return
   let LOCATION = {
     'An Giang': [
       {
