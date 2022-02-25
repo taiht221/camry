@@ -216,3 +216,18 @@ body {
     opacity: 0;
   }
 }
+
+#tabpanel {
+  display: flex;
+  align-items: stretch;
+  > * {
+    height: 100%;
+  }
+}
+.list-group-item.active {
+  background-color: white;
+  border-color: unset;
+  border: none;
+  color: black;
+  border-left: 5px solid black;
+}

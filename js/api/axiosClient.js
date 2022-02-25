@@ -36,7 +36,7 @@ axiosClient.interceptors.response.use(
       snackbar.style.background = 'green'
       snackbar.textContent = 'Chúc mừng bạn đã đăng kí thành công'
       snackbar.classList.add('show')
-      setTimeout(() => (window.location.pathname = '/thank-page.html'), 2000)
+      setTimeout(() => (window.location.pathname = '/demo/Camry/thank-page.html'), 2000)
       localStorage.setItem('sucess', 'sucess')
     }
 

@@ -89,7 +89,7 @@ import postApi from './api/postApi'
 //   }
 // })()
 function initPickColor() {
-  const buttonList = document.querySelector('#buttonList')
+  const buttonList = document.querySelectorAll('.buttonList')
   let imgUrl = document.querySelector('.pick-color').firstElementChild
   const buttonListElement = buttonList.querySelectorAll('.buttonListElement')
 
@@ -101,21 +101,20 @@ function initPickColor() {
         event.classList.remove('active')
       })
       e.classList.add('active')
-      imgUrl.setAttribute('src', e.dataset.url)
+      imgUrl.setAttribute('src', e.dataset.img)
     })
   })
 }
 async function handlePostFormSubmit(formValues) {
-  const { car_location, title, fullname, phone, email } = formValues
-  const form = document.getElementById('form-content')
-  const checked = form.querySelector(`[name="planning"]`).checked
+  console.log(formValues)
+  const { car_location, title, fullname, phone, email, planning } = formValues
   const newValues = {
     phone,
     name: fullname,
     email,
     city: car_location,
     agency: title,
-    plan: checked,
+    plan: planning,
     source: window.location.href,
   }
   const newData = new FormData()
@@ -123,7 +122,6 @@ async function handlePostFormSubmit(formValues) {
     newData.append(key, value)
   }
 
-  console.log(newData)
   try {
     // check  add or edit - call APi - show toast successs -redirect to detail page
     // if formValues have id key ==> Edit Page
@@ -151,6 +149,7 @@ async function handlePostFormSubmit(formValues) {
       fullname: '',
       phone: '',
       email: '',
+      planning: '',
     }
     registerForm({
       formId: 'form-content',

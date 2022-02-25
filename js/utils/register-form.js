@@ -27,6 +27,7 @@ function createYupSchema() {
       .matches(phoneRegExp, 'Vui lòng nhập đúng định đạng số điện thoại!')
       .max(10),
     email: yup.string().email('Vui lòng nhập đúng định đạng email').max(255),
+    planning: yup.string().required('Vui lòng chọn dự định'),
   })
 }
 
@@ -43,7 +44,7 @@ async function validateForm(form, formValues) {
   // get errors --- set errors --- add was-validated class bs
   try {
     // reset previous errors
-    ;['car_location', 'title', 'fullname', 'phone', 'email'].forEach((name) =>
+    ;['car_location', 'title', 'fullname', 'phone', 'email', 'planning'].forEach((name) =>
       setFieldError(form, name, '')
     )
 
@@ -90,6 +91,7 @@ async function validateFormField(form, formValues, name) {
 function showLoading(form) {
   const button = form.querySelector(`[name="submit"]`)
   if (button) {
+    button.style.opacity = 0.5
     button.disabled = true
   }
 }
@@ -97,12 +99,13 @@ function showLoading(form) {
 function hideLoading(form) {
   const button = form.querySelector(`[name="submit"]`)
   if (button) {
+    button.style.opacity = 1
     button.disabled = false
   }
 }
 
 function initValidationOnChange(form) {
-  ;['car_location', 'fullname', 'phone'].forEach((name) => {
+  ;['car_location', 'fullname', 'phone', 'planning'].forEach((name) => {
     const field = form.querySelector(`[name="${name}"]`)
     if (field) {
       field.addEventListener('input', (event) => {

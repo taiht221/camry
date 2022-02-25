@@ -138,11 +138,25 @@
                                 <input type="text" name="email" class="form-control" placeholder="Email">
                                 <p class="showErr"></p>
                             </div>
-                            <div class="form-group checkbox-container">
-                                <input class="form-check-input" type="checkbox" name="planning">
-                                <label class="form-check-label" for="flexCheckIndeterminate">
-                                    Dự định mua xe
-                                </label>
+                            <div class="form-group dropdown-list mb-1">
+                                <select name="planning" class="form-control">
+                                    <option value="">Dự định mua xe</option>
+                                    <option value="Trong vòng 10 ngày">Trong vòng 10 ngày</option>
+                                    <option value="Trong vòng 10-20 ngày">
+                                        Trong vòng 10-20 ngày
+                                    </option>
+                                    <option value="Trong vòng 20-30 ngày">
+                                        Trong vòng 20-30 ngày
+                                    </option>
+                                    <option value="Trong vòng 1-2 tháng">
+                                        Trong vòng 1-2 tháng
+                                    </option>
+                                    <option value="Trong vòng 2-3 tháng">
+                                        Trong vòng 2-3 tháng
+                                    </option>
+                                    <option value="Nhiều hơn 3 tháng">Nhiều hơn 3 tháng</option>
+                                    <option value="Chưa xác định">Chưa xác định</option>
+                                </select>
                                 <p class="showErr"></p>
                             </div>
                             <div class="row-btn">
@@ -161,11 +175,10 @@
                 </div>
             </div>
         </div>
-        <section class="about">
+        <section class="about" id="about-section">
             <img src="images/about.jpg" alt="" class="lazy about-desk">
             <img src="images/about-mobile.jpg" alt="" class="lazy about-mobile">
             <div class="about-content">
-                <span id="about-section"></span>
                 <img src="images/infor.png" alt="">
                 <div class="form-group row-btn mt-2">
                     <button type="button" class="button-web">
@@ -175,9 +188,8 @@
             </div>
         </section>
         <section class="car-shape">
-            <div class="container">
+            <div class="container" id="car-shape-section">
                 <div class="row">
-                    <span id="car-shape-section"></span>
                     <div class="col-lg-12">
                         <div class="outside">
                             <img src="images/out.jpg" alt="">
@@ -191,49 +203,149 @@
                 </div>
             </div>
         </section>
-        <section class="engine">
-            <span id="engine-section"></span>
+        <section class="engine" id="engine-section">
             <img src="images/vanhanh.png" alt="">
         </section>
         <section class="safe">
             <img src="images/antoan.jpg" alt="">
         </section>
-        <section class="hybrid">
-            <span id="hybrid-section"></span>
+        <section class="hybrid" id="hybrid-section">
             <img src="images/hybrid.jpg" alt="">
         </section>
         <section class="register">
             <span id="register-section"></span>
             <div class="container">
                 <div class="row ">
-                    <div class="col-lg-8 col-sm-12 col">
+                    <div role="tabpanel" id="tabpanel" class="col-lg-8 col-sm-12 col">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="home" role="tabpanel">
+                                <div class="pick-color">
+                                    <img src="images/2.0G_B.png" alt="">
+                                    <div class="pick-button">
+                                        <ul class="buttonList">
+                                            <li class="buttonListElement" data-img="images/2.0G_W.png">
+                                                <img src="images/buttoncolor.jpg" alt="">
+                                            </li>
+                                            <li class="buttonListElement active" data-img="images/2.0G_B.png">
+                                                <img src="images/buttoncolor2.jpg" alt="">
+                                            </li>
+                                            <li class="buttonListElement" data-img="images/2.0G_G.png">
+                                                <img src="images/buttoncolor3.jpg" alt="">
+                                            </li>
+                                            <li class="buttonListElement" data-img="images/2.0G_R.png">
+                                                <img src="images/buttoncolor4.jpg" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="profile" role="tabpanel">
+                                <div class="pick-color">
+                                    <img src="images/2.0Q_B.png" alt="">
+                                    <div class="pick-button">
+                                        <ul class="buttonList">
+                                            <li class="buttonListElement" data-img="images/2.0Q_W.png">
+                                                <img src="images/buttoncolor.jpg" alt="">
+                                            </li>
+                                            <li class="buttonListElement active" data-img="images/2.0Q_B.png">
+                                                <img src="images/buttoncolor2.jpg" alt="">
+                                            </li>
+                                            <li class="buttonListElement" data-img="images/2.0Q_G.png">
+                                                <img src="images/buttoncolor3.jpg" alt="">
+                                            </li>
+                                            <li class="buttonListElement" data-img="images/2.0Q_R.png">
+                                                <img src="images/buttoncolor4.jpg" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="messages" role="tabpanel">
+                                <div class="pick-color">
+                                    <img src="images/2.5HV_B.png" alt="">
+                                    <div class="pick-button">
+                                        <ul class="buttonList">
+                                            <li class="buttonListElement" data-img="images/2.5HV_W.png">
+                                                <img src="images/buttoncolor.jpg" alt="">
+                                            </li>
+                                            <li class="buttonListElement active" data-img="images/2.5HV_B.png">
+                                                <img src="images/buttoncolor2.jpg" alt="">
+                                            </li>
+                                            <li class="buttonListElement" data-img="images/2.5HV_G.png">
+                                                <img src="images/buttoncolor3.jpg" alt="">
+                                            </li>
+                                            <li class="buttonListElement" data-img="images/2.5HV_R.png">
+                                                <img src="images/buttoncolor4.jpg" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="settings" role="tabpanel">
+                                <div class="pick-color">
+                                    <img src="images/2.5Q_B.png" alt="">
+                                    <div class="pick-button">
+                                        <ul class="buttonList">
+                                            <li class="buttonListElement" data-img="images/2.5Q_W.png">
+                                                <img src="images/buttoncolor.jpg" alt="">
+                                            </li>
+                                            <li class="buttonListElement active" data-img="images/2.5Q_B.png">
+                                                <img src="images/buttoncolor2.jpg" alt="">
+                                            </li>
+                                            <li class="buttonListElement" data-img="images/2.5Q_G.png">
+                                                <img src="images/buttoncolor3.jpg" alt="">
+                                            </li>
+                                            <li class="buttonListElement" data-img="images/2.5Q_R.png">
+                                                <img src="images/buttoncolor4.jpg" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- List group -->
+                        <div class="list-group" id="myList" role="tablist">
+                            <a class="list-group-item list-group-item-action active" data-bs-toggle="list" href="#home"
+                                role="tab">CAMRY 2.0G</a>
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#profile"
+                                role="tab">CAMRY 2.0Q</a>
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages"
+                                role="tab">CAMRY 2.5HV</a>
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings"
+                                role="tab">CAMRY 2.5Q</a>
+                        </div>
+
+
+                    </div>
+                    <!-- <div class="col-lg-8 col-sm-12 col">
                         <div class="pick-color"
-                            style="background-image:url('images/footerleft.jpg');background-size: 100% 100%;background-repeat: no-repeat;">
-                            <img src="https://ssa-api.toyotavn.com.vn//VehicleImgs/71B21080EBC37013725D83F491330A2C.png"
+                            >
+                            <img src="images/2.0G_B.png"
                                 alt="">
                             <div class="pick-button">
                                 <ul id="buttonList">
                                     <li class="buttonListElement"
-                                        data-url="https://ssa-api.toyotavn.com.vn//VehicleImgs/42EDCBCC6E884F4E2922CD6CE193150E.png">
+                                        data-img="images/2.0G_W.png">
                                         <img src="images/buttoncolor.jpg" alt="">
                                     </li>
                                     <li class="buttonListElement active"
-                                        data-url="https://ssa-api.toyotavn.com.vn//VehicleImgs/71B21080EBC37013725D83F491330A2C.png">
+                                        data-img="images/2.0G_B.png">
                                         <img src="images/buttoncolor2.jpg" alt="">
                                     </li>
                                     <li class="buttonListElement"
-                                        data-url="https://ssa-api.toyotavn.com.vn//VehicleImgs/C1FE4D779FAFCB7744505C5BE3CAA68A.png">
+                                        data-img="images/2.0G_G.png">
                                         <img src="images/buttoncolor3.jpg" alt="">
                                     </li>
                                     <li class="buttonListElement"
-                                        data-url="https://ssa-api.toyotavn.com.vn//VehicleImgs/37919D337B6B724BBBAE6414842A6463.png">
+                                        data-img="images/2.0G_R.png">
                                         <img src="images/buttoncolor4.jpg" alt="">
                                     </li>
                                 </ul>
                             </div>
                         </div>
 
-                    </div>
+                    </div> -->
                     <div class="col-lg-4 col-sm-12 col">
                         <div class="form-register">
                             <div class="form-wrap">
@@ -311,11 +423,25 @@
                                             <input type="text" name="email" class="form-control" placeholder="Email">
                                             <p class="showErr"></p>
                                         </div>
-                                        <div class="form-group checkbox-container">
-                                            <input class="form-check-input" type="checkbox" name="planning">
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                Dự định mua xe
-                                            </label>
+                                        <div class="form-group dropdown-list mb-1">
+                                            <select name="planning" class="form-control">
+                                                <option value="">Dự định mua xe</option>
+                                                <option value="Trong vòng 10 ngày">Trong vòng 10 ngày</option>
+                                                <option value="Trong vòng 10-20 ngày">
+                                                    Trong vòng 10-20 ngày
+                                                </option>
+                                                <option value="Trong vòng 20-30 ngày">
+                                                    Trong vòng 20-30 ngày
+                                                </option>
+                                                <option value="Trong vòng 1-2 tháng">
+                                                    Trong vòng 1-2 tháng
+                                                </option>
+                                                <option value="Trong vòng 2-3 tháng">
+                                                    Trong vòng 2-3 tháng
+                                                </option>
+                                                <option value="Nhiều hơn 3 tháng">Nhiều hơn 3 tháng</option>
+                                                <option value="Chưa xác định">Chưa xác định</option>
+                                            </select>
                                             <p class="showErr"></p>
                                         </div>
                                         <div class="row-btn">
