@@ -98,9 +98,6 @@ function rmActive(buttonList) {
 
 function initPickColor() {
   const buttonList = document.querySelectorAll('.buttonList')
-  let imgUrl = document.querySelector('.pick-color').firstElementChild
-  // const buttonListElement = buttonList.querySelectorAll('.buttonListElement')
-
   buttonList.forEach((e) => {
     const buttonListElement = e.querySelectorAll('.buttonListElement')
     console.log(buttonListElement)
@@ -111,32 +108,11 @@ function initPickColor() {
         buttonListElement.classList.add('active')
         buttonListElement.parentNode.parentNode.parentNode.firstElementChild.setAttribute(
           'src',
-          buttonListElement.dataset.img
+          buttonListElement.dataset.src
         )
       })
     })
   })
-  var triggerTabList = [].slice.call(document.querySelectorAll('#myTab button'))
-  triggerTabList.forEach(function (triggerEl) {
-    var tabTrigger = new bootstrap.Tab(triggerEl)
-
-    triggerEl.addEventListener('click', function (event) {
-      event.preventDefault()
-      tabTrigger.show()
-    })
-  })
-  // buttonListElement.forEach((e, i) => {
-  //   console.log(e)
-  //   e.addEventListener('click', () => {
-  //     //   console.log(e.classList)
-
-  //     buttonListElement.forEach((event, i) => {
-  //       event.classList.remove('active')
-  //     })
-  //     e.classList.add('active')
-  //     imgUrl.setAttribute('src', e.dataset.img)
-  //   })
-  // })
 }
 
 async function handlePostFormSubmit(formValues) {
