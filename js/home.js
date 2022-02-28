@@ -28,8 +28,6 @@ function initPickColor() {
         )
 
         if (index >= 0) {
-          console.log(CarColorList[index])
-
           buttonList.parentElement.parentElement.firstElementChild.setAttribute(
             'src',
             CarColorList[index].imageUrl
