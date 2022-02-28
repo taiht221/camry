@@ -1,5 +1,5 @@
 import '../scss/pages/home.scss'
-import { initGrand, jsonFormData, registerForm } from './utils'
+import { CarColorList, initGrand, jsonFormData, registerForm } from './utils'
 import postApi from './api/postApi'
 
 function removeActive(buttonList) {
@@ -18,16 +18,23 @@ function initPickColor() {
   buttonList.forEach((buttonList) => {
     const buttonListElement = buttonList.querySelectorAll('.buttonListElement')
 
-    buttonListElement.forEach((buttonListElement) => {
+    buttonListElement.forEach((buttonListElement, i) => {
       buttonListElement.addEventListener('click', () => {
         removeActive(buttonListElement.parentNode)
 
         buttonListElement.classList.add('active')
-
-        buttonList.parentElement.parentElement.firstElementChild.setAttribute(
-          'src',
-          buttonListElement.dataset.src
+        let index = CarColorList.findIndex(
+          (colorList) => colorList.id === parseInt(buttonListElement.dataset.src)
         )
+
+        if (index >= 0) {
+          console.log(CarColorList[index])
+
+          buttonList.parentElement.parentElement.firstElementChild.setAttribute(
+            'src',
+            CarColorList[index].imageUrl
+          )
+        }
       })
     })
   })
