@@ -9,7 +9,6 @@
 /* Navigation, header, footer*/
 
 @import '../core/header';
-@import '../core/nav';
 @import '../core/footer';
 
 .homepage {
@@ -193,6 +192,11 @@
       background-color: #cccccc;
       .form-content {
         color: $black-cl;
+      }
+      .note {
+        color: #606060;
+        margin-top: auto;
+        padding-bottom: 5%;
       }
       ::placeholder {
         /* Chrome, Firefox, Opera, Safari 10.1+ */

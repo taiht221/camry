@@ -68,7 +68,7 @@
                     <div class="form-content">
                         <div class="box-title text-center mb-3">
                             <h3 class="title text-uppercase mb-2">Đăng ký lái thử</h3>
-                            <p class="text-center">các mẫu xe Camry mới của Toyota</p>
+                            <p class="text-center">Các mẫu xe Camry mới của Toyota</p>
                         </div>
 
                         <form id="form-content" novalidate>
@@ -114,6 +114,9 @@
                                     <option value="Vinh Phuc">Vĩnh Phúc</option>
                                     <option value="Vinh Long">Vĩnh Long</option>
                                     <option value="Thai Binh">Thái Bình</option>
+                                    <option value="Binh Phuoc">Bình Phước</option>
+                                    <option value="Ca Mau">Cà Mau</option>
+                                    <option value="Quang Tri">Quảng trị</option>
                                 </select>
                                 <p class="showErr"></p>
                             </div>
@@ -131,7 +134,7 @@
                             <div class="form-group mb-2">
                                 <input type="text" name="phone" class="form-control" maxlength="10"
                                     placeholder="Số Điện thoại *"
-                                    onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                 <p class="showErr"></p>
                             </div>
                             <div class="form-group mb-2">
@@ -217,11 +220,22 @@
             <div class="container">
                 <div class="row ">
                     <div role="tabpanel" id="tabpanel" class="col-lg-8 col-sm-12 col">
+                        <!-- List group -->
+                        <div class="list-group" id="myList" role="tablist">
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages"
+                                role="tab">CAMRY 2.5HV</a>
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings"
+                                role="tab">CAMRY 2.5Q</a>
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#profile"
+                                role="tab">CAMRY 2.0Q</a>
+                            <a class="list-group-item list-group-item-action active" data-bs-toggle="list" href="#home"
+                                role="tab">CAMRY 2.0G</a>
+                        </div>
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div class="tab-pane active" id="home" role="tabpanel">
+                            <div class="tab-pane" id="messages" role="tabpanel">
                                 <div class="pick-color">
-                                    <img src="images/2.0G_B.png" alt="">
+                                    <img src="images/2.5HV_B.png" alt="">
                                     <div class="pick-button">
                                         <ul class="buttonList">
                                             <li class="buttonListElement" data-src="1">
@@ -240,9 +254,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="profile" role="tabpanel">
+                            <div class="tab-pane" id="settings" role="tabpanel">
                                 <div class="pick-color">
-                                    <img src="images/2.0Q_B.png" alt="">
+                                    <img src="images/2.5Q_B.png" alt="">
                                     <div class="pick-button">
                                         <ul class="buttonList">
                                             <li class="buttonListElement" data-src="5">
@@ -261,9 +275,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="messages" role="tabpanel">
+                            <div class="tab-pane" id="profile" role="tabpanel">
                                 <div class="pick-color">
-                                    <img src="images/2.5HV_B.png" alt="">
+                                    <img src="images/2.0Q_B.png" alt="">
                                     <div class="pick-button">
                                         <ul class="buttonList">
                                             <li class="buttonListElement" data-src="9">
@@ -282,9 +296,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="settings" role="tabpanel">
+                            <div class="tab-pane active" id="home" role="tabpanel">
                                 <div class="pick-color">
-                                    <img src="images/2.5Q_B.png" alt="">
+                                    <img src="images/2.0G_B.png" alt="">
                                     <div class="pick-button">
                                         <ul class="buttonList">
                                             <li class="buttonListElement" data-src="13">
@@ -303,20 +317,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- List group -->
-                        <div class="list-group" id="myList" role="tablist">
-                            <a class="list-group-item list-group-item-action active" data-bs-toggle="list" href="#home"
-                                role="tab">CAMRY 2.0G</a>
-                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#profile"
-                                role="tab">CAMRY 2.0Q</a>
-                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages"
-                                role="tab">CAMRY 2.5HV</a>
-                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings"
-                                role="tab">CAMRY 2.5Q</a>
-                        </div>
 
 
+                        </div>
                     </div>
                     <!-- <div class="col-lg-8 col-sm-12 col">
                         <div class="pick-color"
@@ -352,7 +355,7 @@
                                 <div class="form-content">
                                     <div class="box-title text-center mb-3">
                                         <h3 class="title text-uppercase mb-2">Đăng ký lái thử</h3>
-                                        <p class="text-center">các mẫu xe Camry mới của Toyota</p>
+                                        <p class="text-center">Các mẫu xe Camry mới của Toyota</p>
                                     </div>
 
 
@@ -399,6 +402,9 @@
                                                 <option value="Vinh Phuc">Vĩnh Phúc</option>
                                                 <option value="Vinh Long">Vĩnh Long</option>
                                                 <option value="Thai Binh">Thái Bình</option>
+                                                <option value="Binh Phuoc">Bình Phước</option>
+                                                <option value="Ca Mau">Cà Mau</option>
+                                                <option value="Quang Tri">Quảng trị</option>
                                             </select>
                                             <p class="showErr"></p>
                                         </div>
@@ -416,7 +422,7 @@
                                         <div class="form-group mb-2">
                                             <input type="text" name="phone" class="form-control" maxlength="10"
                                                 placeholder="Số Điện thoại *"
-                                                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <p class="showErr"></p>
                                         </div>
                                         <div class="form-group mb-2">

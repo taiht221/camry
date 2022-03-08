@@ -1,3 +1,5 @@
+@import './font';
+
 .form-register {
   /* background: url(banner.png) 0 0 / cover no-repeat; */
   background-size: 100% 100%;
@@ -5,7 +7,7 @@
   background-color: #000;
   border-radius: 2px;
   .form-content {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'ToyoTaTypeBold', sans-serif;
     font-weight: 400;
     color: $white-cl;
     width: 100%;
@@ -17,11 +19,15 @@
       letter-spacing: 4px;
       font-weight: 700;
     }
+    p {
+      font-family: 'ToyoTaTypeRegular';
+    }
   }
   ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: $white-cl;
     opacity: 1; /* Firefox */
+    font-family: 'ToyoTaTypeRegular', sans-serif;
   }
 
   :-ms-input-placeholder {
@@ -35,12 +41,10 @@
   }
 }
 .form-register .form-wrap .note {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
+  font-family: 'ToyoTaTypeRegular', sans-serif;
   color: $white-cl;
   font-size: 8px;
   line-height: 15px;
-  color: #969696;
   text-align: center;
   padding: 0px 10px;
 }

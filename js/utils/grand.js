@@ -3,303 +3,318 @@ export function initGrand(form) {
   let LOCATION = {
     'An Giang': [
       {
-        value: '(Cần Thơ) ĐL Cần Thơ_#TCTC',
+        value: '(Cần Thơ) ĐL Cần Thơ CN An Giang',
       },
     ],
     'Ba Ria Vung Tau': [
       {
-        value: '(BRVT) ĐL Vũng Tàu_#TVT',
+        value: '(BRVT) ĐL Vũng Tàu',
       },
     ],
     'Bac Giang': [
       {
-        value: '(Bắc Giang) ĐL Bắc Giang_#TBG',
+        value: '(Bắc Giang) ĐL Bắc Giang',
       },
     ],
     'Bac Ninh': [
       {
-        value: '(Bắc Ninh) ĐL Bắc Ninh_#TBN',
+        value: '(Bắc Ninh) ĐL Bắc Ninh',
       },
       {
-        value: '(Bắc Ninh) ĐL Từ Sơn_#TTS',
+        value: '(Bắc Ninh) ĐL IDMC Từ Sơn',
       },
     ],
     'Ben Tre': [
       {
-        value: '(Bến Tre) ĐL Toyota Bến Tre_#TBT',
+        value: '(Bến Tre) ĐL Toyota Bến Tre',
       },
     ],
     'Binh Duong': [
       {
-        value: '(Bình Dương) ĐL Biên Hoà CN Bình Dương_#TBH-BD',
+        value: '(Bình Dương) ĐL Biên Hòa CN Bình Dương',
       },
       {
-        value: '(Bình Dương) ĐL Bình Dương_#TBD',
+        value: '(Bình Dương) ĐL Bình Dương',
       },
     ],
     'Binh Dinh': [
       {
-        value: '(Bình Định) ĐL Bình Định_#TBI',
+        value: '(Bình Định) ĐL Bình Định',
       },
     ],
     'Binh Thuan': [
       {
-        value: '(Bình Thuận) ĐL Bình Thuận_#TBT',
+        value: '(Bình Thuận) ĐL Bình Thuận',
       },
     ],
     'Can Tho': [
       {
-        value: '(Cần Thơ) ĐL Cần Thơ_#TCTC',
+        value: '(Cần Thơ) ĐL Cần Thơ',
       },
       {
-        value: '(Cần Thơ) ĐL Ninh Kiều_#TNK',
+        value: '(Cần Thơ) ĐL Ninh Kiều',
       },
     ],
     'Dak Lak': [
       {
-        value: '(Dak Lak) - ĐL Buôn Mê Thuột_#TBMT',
+        value: '(Dak Lak) ĐL Buôn Mê Thuột',
       },
       {
-        value: '(Dak Lak) ĐL Đắk Lắk_TDK',
+        value: '(Dak Lak) ĐL Đắk Lắk',
       },
     ],
     'Da Nang': [
       {
-        value: '(Đà Nẵng) ĐL Đà Nẵng_#TDN',
+        value: '(Đà Nẵng) ĐL Đà Nẵng',
       },
       {
-        value: '(Đà Nẵng) Okayama Đà Nẵng_#TODN',
+        value: '(Đà Nẵng) ĐL Okayama Đà Nẵng',
       },
     ],
     'Dong Nai': [
       {
-        value: '(Đồng Nai) ĐL Biên Hòa_#TBH',
+        value: '(Đồng Nai) ĐL Biên Hòa',
       },
       {
-        value: '(Đồng Nai) ĐL Biên Hòa CN Đồng Nai_#TBH',
+        value: '(Đồng Nai) ĐL Biên Hòa CN Đồng Nai',
       },
     ],
     'Gia Lai': [
       {
-        value: '(Gia Lai) ĐL Gia Lai_#TGL',
+        value: '(Gia Lai) ĐL Gia Lai',
       },
     ],
     'Ha Noi': [
       {
-        value: '(HN) Q.Hoàn Kiếm - ĐL Hoàn Kiếm_#THKC',
+        value: '(HN) Q.Hoàn Kiếm - ĐL Hoàn Kiếm',
       },
       {
-        value: '(HN) Q.Hoàng Mai - ĐL Giải Phóng_#TGP',
+        value: '(HN) Q.Hoàng Mai - ĐL Giải Phóng',
       },
       {
-        value: '(HN) Q.Hoàng Mai - ĐL Giải Phóng CN Pháp Vân_#TGP_PV',
+        value: '(HN) Q.Hoàng Mai - ĐL Giải Phóng CN Pháp Vân',
       },
       {
-        value: '(HN) Q.Hà Đông - ĐL Hà Đông_#THD',
+        value: '(HN) Q.Hà Đông - ĐL Hà Đông',
       },
       {
-        value: '(Hà Nội) ĐL IDMC Hoài Đức_#TIHD',
+        value: '(Hà Nội) ĐL IDMC Hoài Đức',
       },
       {
-        value: '(HN) Q.Long Biên - ĐL Long Biên_#TLB',
+        value: '(HN) Q.Long Biên - ĐL Long Biên',
       },
       {
-        value: '(HN) Q.Nam Từ Liêm - ĐL Mỹ Đình_#TMD',
+        value: '(HN) Q.Nam Từ Liêm - ĐL Mỹ Đình',
       },
       {
-        value: '(HN) Q. Nam Từ Liêm - ĐL Thái Hòa Từ Liêm_#THTL',
+        value: '(HN) Q. Nam Từ Liêm - ĐL Thái Hòa Từ Liêm',
       },
       {
-        value: '(HN) Q. Cầu Giấy - ĐL Thăng Long_#TTL',
+        value: '(HN) Q.Cầu Giấy - ĐL Thăng Long',
       },
       {
-        value: '(HN) Q.Thanh Xuân - ĐL Thanh Xuân_#TTX',
+        value: '(HN) Q.Thanh Xuân - ĐL Thanh Xuân',
       },
     ],
     'Ha Tinh': [
       {
-        value: '(Hà Tĩnh) ĐL Hà Tĩnh_#THT',
+        value: '(Hà Tĩnh) ĐL Hà Tĩnh',
       },
     ],
     'Hai Duong': [
       {
-        value: '(Hải Dương) ĐL Hải Dương_#THA',
+        value: '(Hải Dương) ĐL Hải Dương',
       },
     ],
     'Hoa Binh': [
       {
-        value: '(Hòa Bình) ĐL TNG Hòa Bình_#THD-HB',
+        value: '(Hòa Bình) ĐL TNG Hòa Bình',
       },
     ],
     'Hung Yen': [
       {
-        value: '(Hưng Yên) ĐL Hưng Yên_THY',
+        value: '(Hưng Yên) ĐL Hưng Yên',
       },
     ],
     'Hai Phong': [
       {
-        value: '(Hải Phòng) ĐL Nankai Hải Phòng_#TNHP',
+        value: '(Hải Phòng) ĐL Nankai Hải Phòng',
       },
       {
-        value: '(Hải Phòng) ĐL Hải Phòng_#THP',
+        value: '(Hải Phòng) ĐL Hải Phòng',
       },
     ],
     'Ho Chi Minh': [
       {
-        value: '(HCM) H.Bình Chánh - ĐL Asta Fukushima_#TAF',
+        value: '(HCM) H.Bình Chánh - ĐL Asta Fukushima',
       },
       {
-        value: '(HCM) Q.12 - ĐL An Sương_#TAS',
+        value: '(HCM) Q.12 - ĐL An Sương',
       },
       {
-        value: '(HCM) Q.12 - ĐL An Sương CN Trường Chinh_#TAS',
+        value: '(HCM) Q.12 - ĐL An Sương CN Trường Chinh',
       },
       {
-        value: '(HCM) Q.1 - ĐL Bến Thành_#TBTC',
+        value: '(HCM) Q.1 - ĐL Bến Thành',
       },
       {
-        value: '(HCM) Q.Bình Tân - ĐL Bến Thành_#TBTC-BT',
+        value: '(HCM) Q.Bình Tân - ĐL Bến Thành',
       },
       {
-        value: '(HCM) Q.1 - ĐL Bến Thành CN Chương Dương_#TBTC-CD',
+        value: '(HCM) Q.1 - ĐL Bến Thành CN Chương Dương',
       },
       {
-        value: '(HCM) Q.2 - ĐL Đông Sài Gòn_#TESC',
+        value: '(HCM) Q.2 - ĐL Đông Sài Gòn',
       },
       {
-        value: '(HCM) Q.GV - ĐL Đông Sài Gòn_#TESC',
+        value: '(HCM) Q.GV - ĐL Đông Sài Gòn',
       },
       {
-        value: '(HCM) Q.GV - ĐL Đông Sài Gòn - CN Nguyễn Văn Lương_#TESC',
+        value: '(HCM) Q.GV - ĐL Đông Sài Gòn - CN Nguyễn Văn Lương',
       },
       {
-        value: '(HCM) Q.Bình Thạnh - ĐL Hiroshima Tân Cảng_#THTC',
+        value: '(HCM) Q.Bình Thạnh - ĐL Hiroshima Tân Cảng',
       },
       {
         value: '(HCM) Q.Thủ Đức - ĐL Hiroshima Long Phước',
       },
       {
-        value: '(HCM) Q.Bình Tân - ĐL SAMCO CN Tân Tạo_#SAMCO-TT',
+        value: '(HCM) Q.Bình Tân - ĐL SAMCO CN Tân Tạo',
       },
       {
-        value: '(HCM) Q.Tân Bình - ĐL Lý Thường Kiệt_#TLTK',
+        value: '(HCM) Q.Tân Bình - ĐL Lý Thường Kiệt',
       },
       {
-        value: '(HCM) Q.Tân Phú - ĐL Lý Thường Kiệt_#TLTK_TP',
+        value: '(HCM) Q.Tân Phú - ĐL Lý Thường Kiệt',
       },
       {
-        value: '(HCM) Q.7 - ĐL Phú Mỹ Hưng (Tân Phong)_#TPMH',
+        value: '(HCM) Q.7 - ĐL Phú Mỹ Hưng (Tân Phong)',
       },
       {
-        value: '(HCM) Q.7 - ĐL Phú Mỹ Hưng_#TPMH',
+        value: '(HCM) Q.7 - ĐL Phú Mỹ Hưng',
       },
       {
-        value: '(HCM) Q.6 - ĐL Tsusho Saigon Motor Service_#TTSAMCO',
+        value: '(HCM) Q.6 - ĐL Tsusho Saigon Motor Service',
       },
       {
-        value: '(HCM) Q. Thủ Đức - ĐL Đông Sài Gòn - CN Thủ Đức_#TESC',
+        value: '(HCM) Q. Thủ Đức - ĐL Đông Sài Gòn - CN Thủ Đức',
       },
       {
-        value: '(HCM) Q.9 - ĐL Đông Sài Gòn - CN Quận 9_#TESC',
+        value: '(HCM) Q.9 - ĐL Đông Sài Gòn - CN Quận 9',
       },
     ],
     'Khanh Hoa': [
       {
-        value: '(Khánh Hoà) ĐL Nha Trang_#TNT',
+        value: '(Khánh Hoà) ĐL Nha Trang',
       },
     ],
     'Phu Yen': [
       {
-        value: '(Phú Yên) ĐL Phú Yên_TBY',
+        value: '(Phú Yên) ĐL Phú Yên',
       },
     ],
     'Long An': [
       {
-        value: '(Long An) ĐL Long An_#TLA',
+        value: '(Long An) ĐL Long An',
       },
     ],
     'Nam Dinh': [
       {
-        value: '(Nam Định) ĐL Giải Phóng_#TGP-ND',
+        value: '(Nam Định) ĐL Giải Phóng',
       },
     ],
     'Nghe An': [
       {
-        value: '(Nghệ An) ĐL Sông Lam_#TSLC',
+        value: '(Nghệ An) ĐL Sông Lam',
       },
       {
-        value: '(Nghệ An) ĐL Vinh_#TVC',
+        value: '(Nghệ An) ĐL Vinh',
       },
     ],
     'Phu Tho': [
       {
-        value: '(Phú Thọ) ĐL IDMC Phú Thọ_#TPT',
+        value: '(Phú Thọ) ĐL IDMC Phú Thọ',
       },
     ],
     'Lao Cai': [
       {
-        value: '(Lào Cai) ĐL Lao Cai_#TLC',
+        value: '(Lào Cai) ĐL Lao Cai',
       },
     ],
     'Quang Binh': [
       {
-        value: '(Quảng Bình) ĐL Quảng Bình_#TQB',
+        value: '(Quảng Bình) ĐL Quảng Bình',
       },
     ],
     'Quang Ninh': [
       {
-        value: '(Quảng Ninh) ĐL Cẩm Phả_#TCP',
+        value: '(Quảng Ninh) ĐL Cẩm Phả',
       },
       {
-        value: '(Quảng Ninh) ĐL Quảng Ninh_#TQN',
+        value: '(Quảng Ninh) ĐL Quảng Ninh',
       },
     ],
     'Son La': [
       {
-        value: '(Sơn La) ĐL Tây Bắc_#TTBA',
+        value: '(Sơn La) ĐL Tây Bắc',
       },
     ],
     'Tay Ninh': [
       {
-        value: '(Tây Ninh) ĐL Lý Thường Kiệt_#TLTK-TN',
+        value: '(Tây Ninh) ĐL Lý Thường Kiệt',
       },
     ],
     'Tien Giang': [
       {
-        value: '(Tiền Giang) ĐL Tiền Giang_#TTG',
+        value: '(Tiền Giang) ĐL Tiền Giang',
       },
     ],
     'Thai Nguyen': [
       {
-        value: '(Thái Nguyên) ĐL Thái Nguyên_#TTN',
+        value: '(Thái Nguyên) ĐL Thái Nguyên',
       },
     ],
     'Thai Binh': [
       {
-        value: '(Thái Bình) ĐL Thái Bình_#TTB',
+        value: '(Thái Bình) ĐL Thái Bình',
       },
     ],
     'Thanh Hoa': [
       {
-        value: '(Thanh Hoá) ĐL Doanh Thu_#TDT',
+        value: '(Thanh Hoá) ĐL Doanh Thu',
       },
       {
-        value: '(Thanh Hoá) ĐL Thanh Hoá_#TTH',
+        value: '(Thanh Hoá) ĐL Thanh Hoá',
       },
     ],
     'Thua Thien Hue': [
       {
-        value: '(Thừa Thiên Huế) ĐL Huế_#THC',
+        value: '(Thừa Thiên Huế) ĐL Huế',
       },
     ],
     'Vinh Phuc': [
       {
-        value: '(Vĩnh Phúc) ĐL Toyota Hiroshima Vĩnh Phúc_#THVP',
+        value: '(Vĩnh Phúc) ĐL Toyota Hiroshima Vĩnh Phúc',
       },
     ],
     'Vinh Long': [
       {
-        value: '(Vĩnh Long) ĐL Vĩnh Long_#TVL',
+        value: '(Vĩnh Long) ĐL Toyota Thập Nhất Phong Vĩnh Long',
+      },
+    ],
+    'Binh Phuoc': [
+      {
+        value: '(Bình Phước) ĐL Toyota Bình Phước',
+      },
+    ],
+    'Ca Mau': [
+      {
+        value: '(Bình Phước) ĐL Toyota Cà Mau',
+      },
+    ],
+    'Quang Tri': [
+      {
+        value: '(Quảng Trị) ĐL PGS Quảng Trị',
       },
     ],
   }

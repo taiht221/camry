@@ -23,6 +23,7 @@ function initPickColor() {
         removeActive(buttonListElement.parentNode)
 
         buttonListElement.classList.add('active')
+
         let index = CarColorList.findIndex(
           (colorList) => colorList.id === parseInt(buttonListElement.dataset.src)
         )
@@ -33,6 +34,7 @@ function initPickColor() {
             CarColorList[index].imageUrl
           )
         }
+        
       })
     })
   })
